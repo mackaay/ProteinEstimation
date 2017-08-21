@@ -1,0 +1,11 @@
+##linear regression for protein estimation##
+
+#establishing the standards curve#
+Standards <- data.frame(obs=c(0.072, 0.083, 0.108, 0.144, 0.222, 0.075, 0.083, 0.104, 0.137, 0.199, 
+                              0.102, 0.137, 0.209), 
+                        concen =c(138, 272, 575, 1012, 1960, 144, 254, 540, 998, 1846, 497, 959, 1931))
+#linear model#
+pro.est <- lm(concen ~ obs, data = Standards)
+#new data input#
+newdata <- data.frame(obs=c(0.134, 0.170))
+predict(pro.est, newdata)
